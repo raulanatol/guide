@@ -2,12 +2,9 @@ name: Workflow zero
 on: [push]
 jobs:
   build:
-    name: Zero
     runs-on: ubuntu-latest
     steps:
       - id: step1
         run: |
-          echo "Hello World!"
-      - name: Time
-        run: echo 'The time was ${{ steps.step1.outputs.time }}.'
+          echo "Hello World! $(date)"
 
