@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello John
-        uses: raulanatol/my-action@v1.0.0
+        id: hello
+        uses: raulanatol/my-action@master
         with:
           first-name: 'John Doe'
-
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
